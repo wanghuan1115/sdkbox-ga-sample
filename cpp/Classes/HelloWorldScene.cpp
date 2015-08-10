@@ -61,6 +61,7 @@ bool HelloWorld::init()
 void HelloWorld::onEvent(cocos2d::Ref* sender)
 {
     sdkbox::PluginGoogleAnalytics::logEvent("Test", "Click", "", 1);
+    sdkbox::PluginGoogleAnalytics::dispatchHits();
 }
 
 void HelloWorld::menuCloseCallback(Ref* pSender)
