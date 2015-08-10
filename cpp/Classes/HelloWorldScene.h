@@ -17,6 +17,8 @@ public:
     
     // implement the "static create()" method manually
     CREATE_FUNC(HelloWorld);
+    
+    void onEvent(cocos2d::Ref* sender);
 };
 
 #endif // __HELLOWORLD_SCENE_H__
