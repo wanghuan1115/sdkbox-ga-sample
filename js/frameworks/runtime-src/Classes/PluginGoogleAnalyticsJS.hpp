@@ -93,10 +93,5 @@ bool js_PluginGoogleAnalyticsJS_PluginGoogleAnalytics_createTracker(JSContext *c
 #elif defined(JS_VERSION)
 JSBool js_PluginGoogleAnalyticsJS_PluginGoogleAnalytics_createTracker(JSContext *cx, uint32_t argc, jsval *vp);
 #endif
-#if defined(MOZJS_MAJOR_VERSION)
-bool js_PluginGoogleAnalyticsJS_PluginGoogleAnalytics_PluginGoogleAnalytics(JSContext *cx, uint32_t argc, jsval *vp);
-#elif defined(JS_VERSION)
-JSBool js_PluginGoogleAnalyticsJS_PluginGoogleAnalytics_PluginGoogleAnalytics(JSContext *cx, uint32_t argc, jsval *vp);
-#endif
 #endif
 

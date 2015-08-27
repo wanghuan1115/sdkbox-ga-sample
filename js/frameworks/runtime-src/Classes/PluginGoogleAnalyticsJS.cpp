@@ -589,30 +589,6 @@ JSBool js_PluginGoogleAnalyticsJS_PluginGoogleAnalytics_createTracker(JSContext 
     return JS_FALSE;
 }
 #endif
-bool js_PluginGoogleAnalyticsJS_PluginGoogleAnalytics_constructor(JSContext *cx, uint32_t argc, jsval *vp)
-{
-    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
-    bool ok = true;
-    sdkbox::PluginGoogleAnalytics* cobj = new (std::nothrow) sdkbox::PluginGoogleAnalytics();
-    TypeTest<sdkbox::PluginGoogleAnalytics> t;
-    js_type_class_t *typeClass = nullptr;
-    std::string typeName = t.s_name();
-    auto typeMapIter = _js_global_type_map.find(typeName);
-    CCASSERT(typeMapIter != _js_global_type_map.end(), "Can't find the class type!");
-    typeClass = typeMapIter->second;
-    CCASSERT(typeClass, "The value is null.");
-    // JSObject *obj = JS_NewObject(cx, typeClass->jsclass, typeClass->proto, typeClass->parentProto);
-    JS::RootedObject proto(cx, typeClass->proto.get());
-    JS::RootedObject parent(cx, typeClass->parentProto.get());
-    JS::RootedObject obj(cx, JS_NewObject(cx, typeClass->jsclass, proto, parent));
-    args.rval().set(OBJECT_TO_JSVAL(obj));
-    // link the native object with the javascript object
-    js_proxy_t* p = jsb_new_proxy(cobj, obj);
-    if (JS_HasProperty(cx, obj, "_ctor", &ok) && ok)
-        ScriptingCore::getInstance()->executeFunctionWithOwner(OBJECT_TO_JSVAL(obj), "_ctor", args);
-    return true;
-}
-
 
 
 void js_PluginGoogleAnalyticsJS_PluginGoogleAnalytics_finalize(JSFreeOp *fop, JSObject *obj) {
@@ -678,7 +654,7 @@ void js_register_PluginGoogleAnalyticsJS_PluginGoogleAnalytics(JSContext *cx, JS
         cx, global,
         JS::NullPtr(), // parent proto
         jsb_sdkbox_PluginGoogleAnalytics_class,
-        js_PluginGoogleAnalyticsJS_PluginGoogleAnalytics_constructor, 0, // constructor
+        dummy_constructor<sdkbox::PluginGoogleAnalytics>, 0, // no constructor
         properties,
         funcs,
         NULL, // no static properties
@@ -747,7 +723,7 @@ void js_register_PluginGoogleAnalyticsJS_PluginGoogleAnalytics(JSContext *cx, JS
         cx, global,
         NULL, // parent proto
         jsb_sdkbox_PluginGoogleAnalytics_class,
-        js_PluginGoogleAnalyticsJS_PluginGoogleAnalytics_constructor, 0, // constructor
+        dummy_constructor<sdkbox::PluginGoogleAnalytics>, 0, // no constructor
         properties,
         funcs,
         NULL, // no static properties
@@ -812,7 +788,7 @@ void js_register_PluginGoogleAnalyticsJS_PluginGoogleAnalytics(JSContext *cx, JS
         cx, global,
         NULL, // parent proto
         jsb_sdkbox_PluginGoogleAnalytics_class,
-        js_PluginGoogleAnalyticsJS_PluginGoogleAnalytics_constructor, 0, // constructor
+        dummy_constructor<sdkbox::PluginGoogleAnalytics>, 0, // no constructor
         properties,
         funcs,
         NULL, // no static properties
