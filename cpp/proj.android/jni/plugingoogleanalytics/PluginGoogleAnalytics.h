@@ -100,10 +100,6 @@ namespace sdkbox
          * nothing will happen.
          */
         static void enableTracker( string trackerId );
-
-        #ifdef OBFUSCATED
-        _f2c23a1f452545d1b214e79dbf1beba5
-        #endif
     };
 
 }

@@ -6,24 +6,27 @@
       <ObjectData Name="Scene" ctype="GameNodeObjectData">
         <Size X="1334.0000" Y="750.0000" />
         <Children>
-          <AbstractNodeData Name="background_1" CanEdit="False" ActionTag="-1034996084" Tag="4" IconVisible="False" RightMargin="310.0000" TopMargin="110.0000" ctype="SpriteObjectData">
-            <Size X="1024.0000" Y="640.0000" />
-            <AnchorPoint />
-            <Position />
+          <AbstractNodeData Name="background" CanEdit="False" ActionTag="176432528" Tag="4" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Enable="True" Scale9Width="1024" Scale9Height="640" ctype="PanelObjectData">
+            <Size X="1334.0000" Y="750.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="667.0000" Y="375.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
+            <PrePosition X="0.5000" Y="0.5000" />
+            <PreSize X="1.0000" Y="1.0000" />
             <FileData Type="Normal" Path="background.jpg" Plist="" />
-            <BlendFunc Src="770" Dst="771" />
+            <SingleColor A="255" R="150" G="200" B="255" />
+            <FirstColor A="255" R="150" G="200" B="255" />
+            <EndColor A="255" R="255" G="255" B="255" />
+            <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="btnEvent" ActionTag="-803316964" Tag="5" IconVisible="False" LeftMargin="78.1992" RightMargin="1051.8008" TopMargin="578.8037" BottomMargin="91.1963" TouchEnable="True" FontSize="36" ButtonText="Log Event" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="72" Scale9Height="18" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="btnEvent" ActionTag="-803316964" Tag="5" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="565.0000" RightMargin="565.0000" TopMargin="335.0000" BottomMargin="335.0000" TouchEnable="True" FontSize="36" ButtonText="Log Event" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="72" Scale9Height="18" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="204.0000" Y="80.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="180.1992" Y="131.1963" />
+            <Position X="667.0000" Y="375.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.1351" Y="0.1749" />
+            <PrePosition X="0.5000" Y="0.5000" />
             <PreSize X="0.1529" Y="0.1067" />
             <TextColor A="255" R="255" G="255" B="255" />
             <DisabledFileData Type="Normal" Path="button.png" Plist="" />
