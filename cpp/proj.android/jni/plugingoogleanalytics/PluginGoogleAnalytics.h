@@ -9,8 +9,6 @@
 #include <string>
 #include <vector>
 
-using namespace std;
-
 namespace sdkbox
 {
 
@@ -49,43 +47,58 @@ namespace sdkbox
          * or <code>dispatchHits</code> should be called.
          */
         static void stopPeriodicalDispatch();
+        
+        /*!
+         * Set user ID for this tracking session
+         */
+        static void setUser(const std::string& userID);
+
+        /*!
+         * Set value to custom dimension
+         */
+        static void setDimension(int index, const std::string& value);
+
+        /*!
+         * Set value to custom metric
+         */
+        static void setMetric(int index, const std::string& value);
 
         /*!
          * Log screen info. title is the title of a screen. Screens are logical units
          * inside your app you'd like to identify at analytics panel.
          */
-        static void logScreen(string title);
+        static void logScreen(const std::string& title);
 
         /*!
          * GoogleAnalytics::logEvent("Achievement", "Unlocked", "Slay 10 dragons", 5);
          */
-        static void logEvent(string eventCategory, string eventAction, string eventLabel, int value);
+        static void logEvent(const std::string& eventCategory, const std::string& eventAction, const std::string& eventLabel, int value);
 
         /*!
          * Log an exception. It is a basic support for in-app events.
          */
-        static void logException(string exceptionDescription, bool isFatal);
+        static void logException(const std::string& exceptionDescription, bool isFatal);
 
         /*!
          * Measure a time inside the application.
          */
-        static void logTiming(string timingCategory, int timingInterval, string timingName, string timingLabel);
+        static void logTiming(const std::string& timingCategory, int timingInterval, const std::string& timingName, const std::string& timingLabel);
 
         /*!
          * Log a social event.
          */
-        static void logSocial(string socialNetwork, string socialAction, string socialTarget);
+        static void logSocial(const std::string& socialNetwork, const std::string& socialAction, const std::string& socialTarget);
 
         /*!
          * While running on dry run, the tracked events won't be sent to the actual
          * analytics account.
          */
-        static void setDryRun( bool dr );
+        static void setDryRun( bool enable );
 
         /*!
          * Enable advertising tracking when in google's ad vendors.
          */
-        static void enableAdvertisingTracking( bool e );
+        static void enableAdvertisingTracking( bool enable );
 
         /*!
          * Create a tracker identified by the google analytics tracker id XX-YYYYYYYY-Z.
@@ -93,13 +106,13 @@ namespace sdkbox
          * tracker associated with tracker id will be set as default tracker for  analytics
          * operations.
          */
-        static void createTracker( string trackerId );
+        static void createTracker( const std::string& trackerId );
 
         /*!
          * Enable a tracker identified by a trackerId. If the tracker does not exist,
          * nothing will happen.
          */
-        static void enableTracker( string trackerId );
+        static void enableTracker( const std::string& trackerId );
     };
 
 }
