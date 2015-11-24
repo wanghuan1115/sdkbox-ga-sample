@@ -5,6 +5,7 @@ var HelloWorldLayer = cc.Layer.extend({
 
         this._super();
 
+        cc.log("GA Inited");
         sdkbox.PluginGoogleAnalytics.init();
 
         var size = cc.winSize;
@@ -12,6 +13,7 @@ var HelloWorldLayer = cc.Layer.extend({
         var logEventItem = new cc.MenuItemFont("LogEvent", function(){
           sdkbox.PluginGoogleAnalytics.logEvent("TestCategory", "Action", "Event", 1);
           sdkbox.PluginGoogleAnalytics.dispatchHits();
+          cc.log("send event to ga");
         }, this);
         var m = new cc.Menu(logEventItem);
         this.addChild(m);
@@ -21,7 +23,7 @@ var HelloWorldLayer = cc.Layer.extend({
             res.CloseNormal_png,
             res.CloseSelected_png,
             function () {
-                cc.log("Menu is clicked!");
+                cc.log("click");
             }, this);
         closeItem.attr({
             x: size.width - 20,
